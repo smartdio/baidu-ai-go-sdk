@@ -115,7 +115,7 @@ func (oc *OCRClient) ReceiptRecognize(image *vision.Image, params ...RequestPara
 //  VatInvoiceRecognize 增值税发票识别
 func (oc *OCRClient) VatInvoiceRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
-	return oc.ocr(image, OCR_RECEIPT, defaultVatInvoiceParams, params...)
+	return oc.ocr(image, OCR_VAT_INVOICE, defaultVatInvoiceParams, params...)
 
 }
 
