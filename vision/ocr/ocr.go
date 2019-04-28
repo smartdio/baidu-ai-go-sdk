@@ -22,6 +22,7 @@ const (
 	// smartdio 增加的api
 	OCR_RECEIPT     = "https://aip.baidubce.com/rest/2.0/ocr/v1/receipt"     //通用发票
 	OCR_VAT_INVOICE = "https://aip.baidubce.com/rest/2.0/ocr/v1/vat_invoice" //增值税发票
+	OCR_INVOICE = "https://aip.baidubce.com/rest/2.0/ocr/v1/invoice" //机打发票
 )
 
 //GeneralRecognizeBasic 通用文字识别
@@ -110,6 +111,13 @@ func (oc *OCRClient) FormDataRecognize(image *vision.Image, params ...RequestPar
 func (oc *OCRClient) ReceiptRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
 
 	return oc.ocr(image, OCR_RECEIPT, defaultReceiptParams, params...)
+
+}
+
+//  VatInvoiceRecognize 机打发票识别
+func (oc *OCRClient) InvoiceRecognize(image *vision.Image, params ...RequestParam) (*OCRResponse, error) {
+
+	return oc.ocr(image, OCR_INVOICE, defaultInvoiceParams, params...)
 
 }
 //  VatInvoiceRecognize 增值税发票识别

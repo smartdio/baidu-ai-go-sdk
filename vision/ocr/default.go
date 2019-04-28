@@ -70,3 +70,9 @@ var defaultVatInvoiceParams = map[string]interface{}{
 	"image":    "",       //图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式
 	"accuracy": "normal", //normal（默认配置）对应普通精度模型，识别速度较快，在四要素的准确率上和high模型保持一致，high对应高精度识别模型，相应的时延会增加，因为超时导致失败的情况也会增加（错误码282000）
 }
+
+var defaultInvoiceParams = map[string]interface{}{
+
+	"image":    "",      //图像数据，base64编码，要求base64编码后大小不超过4M，最短边至少15px，最长边最大4096px,支持jpg/png/bmp格式
+	"location": "false", //是否输出位置信息，true：输出位置信息，false：不输出位置信息，默认false
+}
